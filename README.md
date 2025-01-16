@@ -1,1 +1,1 @@
-This project is helps users to find tourist spots in various locations. It is leads you from one tourist spot to another spots in the particular place. The places will be hill station or city. This project is developed by using PHP, HTML, CSS and PhpMyAdmin.
+This project is helps users to find tourist spots in various locations. It is leads you from one tourist spot to another spots in the particular place.In this project, The places will be a hill station or a city. This project is developed by using PHP, HTML, CSS and PhpMyAdmin.
