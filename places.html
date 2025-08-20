@@ -1,24 +1,211 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title> Road Map For Tourist Places </title>
-<style>
-body {color:black;background-image:url('b.png');}
-a {text-decoration:none; font-size:25px;color:black;font-weight:bold;}
-h1 {border:none;color:white;background-color:blue;padding:15px;font-size:25px;}
-h2 {color:white;font-size:24px;}
-button {height:100px; width:300px;background-color:yellow;font-size:24px;font-weight:bold;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road Map For Tourist Places</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for Menu Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Reset */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color:#222;
+    }
+
+    /* Navbar */
+    header {
+      background: #0056b3;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 20px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
+    /* Mobile Menu Icon */
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* Tourist Places Grid */
+    .places {
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .places a {
+      position: relative;
+      display: block;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: #fff;
+    }
+
+    .places a img {
+      width: 100%;
+      height: 220px;       /* Keep all images same size */
+      object-fit: cover;   /* Crop smartly */
+      display: block;
+    }
+
+    /* Overlay Text */
+    .places a span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      text-align: center;
+      padding: 8px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .places a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #0056b3;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
-<form>
-<center>
-<h1> Road Map For Tourist Places </h1>
-<h2> Select Your Wish </h2><br>
-<button type="submit" formaction="hills.html"> Hill Stations </button>
-<br> <br>
-<button type="submit" formaction ="others.html"> Other Places </button>
-</center>
-</form>
-</div>
+
+  <!-- Header / Navbar -->
+  <header>
+    <h1>Road Map For Tourist Places</h1>
+    <i class="fas fa-bars menu-toggle"></i>
+    <nav>
+        <a href="homepage2.html">Home</a>
+        <a href="Places.html">Places</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="travellers.html">Companion</a>      
+        <a href="companion.html">Profile</a>
+        <a href="things.html">Things</a>
+        <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <!-- Tourist Places Grid -->
+  <section class="places">
+    <a href="kodaikanal.html">
+      <img src="10.png" alt="Kodaikanal">
+      <span>Kodaikanal</span>
+    </a>
+    <a href="munnar.html">
+      <img src="8.png" alt="Munnar">
+      <span>Munnar</span>
+    </a>
+    <a href="coorg.html">
+      <img src="5.png" alt="Coorg">
+      <span>Coorg</span>
+    </a>
+    <a href="chikmaglur.html">
+      <img src="6.png" alt="Chikmaglur">
+      <span>Chikmaglur</span>
+    </a>
+    <a href="wayanad.html">
+      <img src="7.png" alt="Wayanad">
+      <span>Wayanad</span>
+    </a>
+    <a href="ooty.html">
+      <img src="9.png" alt="Ooty">
+      <span>Ooty</span>
+    </a>
+    <a href="kanyakumari.html">
+      <img src="kk14.png" alt="Kanyakumari">
+      <span>Kanyakumari</span>
+    </a>
+    <a href="thanjavur.html">
+      <img src="thanjavur.png" alt="Thanjavur">
+      <span>Thanjavur</span>
+    </a>
+    <a href="chennai.html">
+      <img src="15.png" alt="Chennai">
+      <span>Chennai</span>
+    </a>
+    <a href="kochi.html">
+      <img src="kochi.png" alt="Kochi">
+      <span>Kochi</span>
+    </a>
+    <a href="goa.html">
+      <img src="17.png" alt="Goa">
+      <span>Goa</span>
+    </a>
+    <a href="bangalur.html">
+      <img src="16.png" alt="Bangalore">
+      <span>Bangalore</span>
+    </a>
+  </section>
+
+  <!-- Script for Menu -->
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>

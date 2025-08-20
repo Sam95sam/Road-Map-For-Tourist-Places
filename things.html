@@ -1,41 +1,210 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>  Road Map For Tourist Places </title>
-<style>
-body {color:white;background-image:url("b.png");}
-img {margin:20px;border:50px;}
-a {text-decoration:none;margin:20px;text-color:blue;color:black;}
-h1 {border:none;color:white;background-color:blue;padding:15px;font-size:25px;}
-h2 {border:none;color:black;background-color:yellow;padding:10px;font-size:25px;}
-h3 {color:white;font-size:25px;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road Map For Tourist Places</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      background: url("bg.png") no-repeat center center/cover;
+      line-height: 1.6;
+    }
+
+    
+    /* Navbar */
+    header {
+      background: #0056b3;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 20px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #0056b3;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+
+    /* Headings */
+    h2 {
+      text-align: center;
+      background: #ffeb3b;
+      padding: 12px 25px;
+      font-size: 22px;
+      color: #222;
+      margin: 25px auto 10px;
+      width: fit-content;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    h3 {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 20px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card p {
+      text-align: center;
+      padding: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #333;
+      background: #fafafa;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 18px;
+      background: #0078d7;
+      color: white;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-<form name = "things ">
-<div class = "main" >
-<center>
-<h1> Road Map For Tourist Places </h1>
-<h2><a href= "homepage.html"> Home </a> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href= "Places.html" > Places</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a href= "things.html" > Things </a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a href="about.html"> About </a></h2>
 
-<h3> The things will be helpful for your Travel. So, Suggest you to have these things also with you. </h3></center>
+  <!-- Navbar -->
+  <header>
+    <h1>Road Map For Tourist Places</h1>
+    <nav id="menu">
+        
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <a href="homepage2.html">Home</a>
+    <a href="Places.html">Places</a>
+    <a href="ideas.html">Ideas</a>
+    <a href="travellers.html">Companion</a>
+    <a href="companion.html">Profile</a>
+    <a href="things.html">Things</a>
+    <a href="about.html">About</a>
+    </nav>
+  </header>
 
-<img src = "dress.jpg"  style = "width:30%;height:30%;"> 
-<img src = "rain coat.jpg"  style = "width:30%;height:30%;"> 
-<img src = "umbrellas.jpg"  style = "width:30%;height:30%;"><br><br>
-<img src = "water bottle.jpg"  style = "width:30%;height:30%;"> 
-<img src = "power bank.png"  style = "width:30%;height:30%;"> 
-<img src = "light.jpg"  style = "width:30%;height:30%;"><br><br>
+  <!-- Main Content -->
+  <main>
+    <h2>Things to Carry for Travel</h2>
+    <h3>The things will be helpful for your Travel. Don’t forget these essentials!</h3>
 
-<center><h3> Especially For The Hills and Mountains.</h3></center>
+    <div class="image-grid">
+      <div class="card"><img src="dress.jpg" alt="Dress"><p>Dress</p></div>
+      <div class="card"><img src="rain coat.jpg" alt="Rain Coat"><p>Rain Coat</p></div>
+      <div class="card"><img src="umbrellas.jpg" alt="Umbrellas"><p>Umbrellas</p></div>
+      <div class="card"><img src="water bottle.jpg" alt="Water Bottle"><p>Water Bottle</p></div>
+      <div class="card"><img src="power bank.png" alt="Power Bank"><p>Power Bank</p></div>
+      <div class="card"><img src="light.jpg" alt="Light"><p>Flash Light</p></div>
+    </div>
 
-<img src = "sweater.jpg"   style = "width:30%;height:30%;">
-<img src = "shoes.jpg"  style = "width:30%;height:30%;">
-<img src = "jerkin.webp"   style = "width:30%;height:30%;"> <br><br>
-<img src = "muffler.jpeg"   style = "width:30%;height:30%;">
-<img src = "glowes.webp"   style = "width:30%;height:30%;"> 
-<img src = "biscuits.jpg"  style = "width:30%;height:30%;"> 
-<center><h3> Be Happy !!   Enjoy Your Travel !! </h3></center>
-</div>
-</form>
+    <h3>Especially For The Hills and Mountains</h3>
+    <div class="image-grid">
+      <div class="card"><img src="sweater.jpg" alt="Sweater"><p>Sweater</p></div>
+      <div class="card"><img src="shoes.jpg" alt="Shoes"><p>Shoes</p></div>
+      <div class="card"><img src="jerkin.webp" alt="Jerkin"><p>Jerkin</p></div>
+      <div class="card"><img src="muffler.jpeg" alt="Muffler"><p>Muffler</p></div>
+      <div class="card"><img src="glowes.webp" alt="Gloves"><p>Gloves</p></div>
+      <div class="card"><img src="biscuits.jpg" alt="Snacks"><p>Snacks</p></div>
+    </div>
+
+    <h3> Be Happy !! Enjoy Your Travel </h3>
+  </main>
+
+     <!-- Script for Menu -->
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
+
 </body>
 </html>

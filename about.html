@@ -1,26 +1,205 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title> Road Map For Tourist Places </title>
-<style>
-body {height : 100% ;width : 100% ;color:white;background-image:url("b.png");}
-a {color:black;text-align:justify;text-decoration:none;font-size:24px; }
-h1 {border:none;color:white;background-color:blue;padding:10px;font-size:25px;}
-h2 {margin:20px;border:none;color:black;background-color:yellow; padding:10px;font-size:24px;}
-h3 {color:white;font-size:24px;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road Map For Tourist Places</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background: url("b.png") no-repeat center center/cover;
+      min-height: 100vh;
+    }
+
+
+    /* Navbar */
+    header {
+      background: #0056b3;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 20px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #0056b3;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Content Section */
+    .content {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .content h2 {
+      font-size: 22px;
+      color: yellow;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.8;
+      text-align: justify;
+      color: #f1f1f1;
+    }
+
+    .quote {
+      text-align: center;
+      margin: 30px 0;
+      font-size: 20px;
+      font-weight: 500;
+      color: #ffeb3b;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .contact h3 {
+      margin-bottom: 15px;
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .contact p {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #f1f1f1;
+    }
+
+    .contact a {
+      color: #ffeb3b;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact i {
+      margin-right: 8px;
+      color: #ffeb3b;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      background: rgba(0, 86, 179, 0.9);
+      font-size: 14px;
+      color: #eee;
+    }
+  </style>
 </head>
 <body>
-<form>
-<center>
-<h1> Road Map For Tourist Places </h1>
-<h2><a href= "homepage.html"> Home </a> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-<a href="Places.html"> Places </a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a href= "things.html" > Things </a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; About </h2> </center>
 
-<h3>The " Roadmap For Tourist Places " is actually being as a guide for the tourist people to reach places. This is used to reach places from one tourist place to an another tourist place. By using this, Travellers can reach some tourist places such as Kodaikanal, Munnar, Kanyakumari, Thanjavur, Chennai and More.<br></h3>
-<h3><center>Just Travel To The Mountains!! Enjoy The Places!! </center><br></h3>
-<h3>Contact For The Enquiries !!<br><br>&emsp;&emsp;&emsp;
-Samrades at <a href=" https://www.instagram.com/samrades_?igsh=eGU1cGxweDh3aXlw"><img src="i.jpg" style="height:25px;width:25px;"> </a> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 
-samrades@gmail.com &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; +91 9585252545<br></h3>
-</form>
+  <!-- Header -->
+  <header>
+    <h1>Road Map For Tourist Places</h1>
+    <nav id="menu">
+        
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <a href="homepage2.html">Home</a>
+    <a href="Places.html">Places</a>
+    <a href="ideas.html">Ideas</a>
+    <a href="travellers.html">Companion</a>
+    <a href="companion.html">Profile</a>
+    <a href="things.html">Things</a>
+    <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h2>About This Website</h2>
+    <p>
+      The <strong>Road Map For Tourist Places</strong> is designed as a smart travel guide for tourists. 
+      It helps travelers explore routes from one destination to another seamlessly. 
+      With this roadmap, tourists can discover famous places such as <b>Kodaikanal, Munnar, Kanyakumari, Thanjavur, Chennai</b> and many more. 
+    </p>
+
+    <div class="quote"> Just Travel To The Mountains!! Enjoy The Places!! </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+      <h3> Contact For Enquiries</h3>
+      <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/">Samrades on Instagram</a></p>
+      <p><i class="fas fa-envelope"></i> adventures23@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +91 95852 52545</p>
+    </div>
+  </div>
+
+ 
+
+    <!-- Script for Menu -->
+    <script>
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("nav");
+    
+        toggle.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+      </script>
+
 </body>
 </html>

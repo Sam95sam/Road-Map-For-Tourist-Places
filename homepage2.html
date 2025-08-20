@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background-image: url("c.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    header {
+      background: #0056b3;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 20px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #0056b3;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #eee;
+    }
+
+    .btn {
+      display: inline-block;
+      background: transparent;
+      border: 2px solid #ffeb3b;
+      color: #ffeb3b;
+      padding: 12px 28px;
+      font-size: 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffeb3b;
+      color: #000;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 10px;
+        gap: 15px;
+      }
+
+      .hero {
+        padding: 40px 20px;
+      }
+
+      .hero h2 {
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Road Map For Tourist</h1>
+    <nav>
+      <a href="homepage2.html">Home</a>
+      <a href="Places.html">Places</a>
+      <a href="ideas.html">Ideas</a>
+      <a href="travellers.html">Companion</a>
+      <a href="companion.html">Profile</a>
+      <a href="things.html">Things</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Let's Start Your Travel</h2>
+    <p>You know that travel is the best way to explore the world and create unforgettable memories in your life.</p>
+    <a href="Places.html" class="btn">Explore Now</a>
+  </section>
+
+    <!-- Script for Menu -->
+    <script>
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("nav");
+    
+        toggle.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+      </script>
+</body>
+</html>
