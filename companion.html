@@ -1,74 +1,11 @@
-<!-- 
-<?php
-// Database connection
-$servername = "localhost";
-$username = "root"; 
-$password = ""; 
-$database = "tours";
-
-$conn = new mysqli($servername, $username, $password, $database);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Handle form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $present_location = $_POST['present_location'];
-    $age = $_POST['age'];
-    $gender = $_POST['gender'];
-    $travel_destination = $_POST['travel_destination'];
-    $contact_details = $_POST['contact_details'];
-    $mode_of_transport = $_POST['mode_of_transport'];
-    $travel_date = $_POST['travel_date_from'];
-    $return_date = $_POST['to_date'];
-    $additional_info = $_POST['additional_info'];
-
-    // Handle file upload
-    $target_dir = "C:\wamp\www\paste"; // Folder where images will be stored
-    $photo = $target_dir . basename($_FILES["photo"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($photo, PATHINFO_EXTENSION));
-
-    // Check if image file is an actual image
-    $check = getimagesize($_FILES["photo"]["tmp_name"]);
-    if ($check === false) {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-
-    // Allow certain file formats
-    if (!in_array($imageFileType, ["jpg", "jpeg", "png", "gif"])) {
-        $uploadOk = 0;
-    }
-
-    // Move uploaded file to the target directory
-    if ($uploadOk && move_uploaded_file($_FILES["photo"]["tmp_name"], $photo)) {
-        // Insert data into the database
-        $sql = "INSERT INTO travellers (name, present_location, photo, age, gender, travel_destination, contact_details, mode_of_transport, travel_date_from, to_date, additional_info)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssisssssss", $name, $present_location, $photo, $age, $gender, $travel_destination, $contact_details, $mode_of_transport, $travel_date, $return_date, $additional_info);
-        
-        if ($stmt->execute()) {
-            echo "Data inserted successfully!";
-        header("Location: travellers.php");
-        exit();
-
-        } else {
-            echo "Error: " . $stmt->error;
-        }
-    }
-}
-?>
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Road Map For Tourist </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 body {color:black;font-weight:bold;background-image:url("bg2.jpg");background-size:1400px 1000px;      font-family: 'Segoe UI', sans-serif;
 }
@@ -76,7 +13,7 @@ a {text-decoration:none;border:none;color:black;background-color:yellow;padding:
 h2 {color:white;font-size:24px;background-color:yellow;padding:10px;}
 h1 {border:none;color:white;background-color:blue;padding:10px;font-size:25px;}
 h3 {color:purple;font-size:24px;padding:10px;}
-h4 {color:maroon;font-size:20px;padding:10px;}
+h4 {color:maroon;font-size:20px;padding:10px;margin-left: auto;} 
 button {border:2px;color:white;background-color:green;padding:8px;font-size:20px;}
 
     
@@ -115,7 +52,27 @@ background-color: #0056b3 }
     nav a:hover {
       color: #ffeb3b;
     }
+ /* Responsive */
+ @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #0056b3;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+      }
 
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
     /* Mobile Menu Icon */
     .menu-toggle {
       display: none;
@@ -138,6 +95,197 @@ background-color: #0056b3 }
     }
 
 
+  
+/* Navbar */
+header {
+  background: #0056b3;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+/* Mobile Menu Icon */
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #0056b3;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 15px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+    /* Navbar */
+    header {
+      background: #0056b3;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 20px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #0056b3;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Content Section */
+    .content {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .content h2 {
+      font-size: 22px;
+      color: yellow;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.8;
+      text-align: justify;
+      color: #f1f1f1;
+    }
+
+    .quote {
+      text-align: center;
+      margin: 30px 0;
+      font-size: 20px;
+      font-weight: 500;
+      color: #ffeb3b;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .contact h3 {
+      margin-bottom: 15px;
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .contact p {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #f1f1f1;
+    }
+
+    .contact a {
+      color: #ffeb3b;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact i {
+      margin-right: 8px;
+      color: #ffeb3b;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      background: rgba(0, 86, 179, 0.9);
+      font-size: 14px;
+      color: #eee;
+    }
      /* Responsive */
      @media (max-width: 768px) {
       nav {
@@ -162,32 +310,34 @@ background-color: #0056b3 }
   </style>
 </head>
 <body>
-    <header>
-        <h1>Road Map For Tourist</h1>
-        <nav>
-          <a href="homepage2.html">Home</a>
-          <a href="Places.html">Places</a>
-          <a href="ideas.html">Ideas</a>
-          <a href="travellers.html">Companion</a>
-          <a href="companion.html">Profile</a>
-          <a href="things.html">Things</a>
-          <a href="about.html">About</a>
-        </nav>
-      </header>
+ <!-- Header / Navbar -->
+ <header>
+    <h1>Road Map For Tourist Places</h1>
+    <i class="fas fa-bars menu-toggle"></i>
+    <nav>
+        <a href="homepage2.html">Home</a>
+        <a href="Places.html">Places</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="travellers.html">Companion</a>      
+        <a href="companion.html">Profile</a>
+        <a href="things.html">Things</a>
+        <a href="about.html">About</a>
+    </nav>
+  </header>
 <center>
 <form>
 <h3>Create Your Profile </h3>
 <h4>
-    Name: <input type="text" name="name" required>&nbsp;&nbsp;&nbsp;&nbsp;
-    Present Location: <input type="text" name="present_location" required>&nbsp;&nbsp;&nbsp;&nbsp;
-    Age: <input type="number" name="age" required>&nbsp;&nbsp;&nbsp;&nbsp;
+    Name: <input type="text" name="name" required>    <br>
+    Present Location: <input type="text" name="present_location" required>  <br>  
+    Age: <input type="number" name="age" required>    <br>
     Gender: 
     <select name="gender" required>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
         <option value="Other">Other</option>
-    </select><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;
-    Travel Destination: <input type="text" name="travel_destination" required>&nbsp;&nbsp;&nbsp;&nbsp;
+    </select>  <br>
+    Travel Destination: <input type="text" name="travel_destination" required><br>
         Mode of Transport: 
     <select name="mode_of_transport" required>
         <option value="Bike">Bike</option>
@@ -196,15 +346,24 @@ background-color: #0056b3 }
         <option value="Train">Train</option>
         <option value="Flight">Flight</option>
            <option value="Other">Other</option>
-    </select>&nbsp;&nbsp;&nbsp;&nbsp;
-    Travel Date: <input type="date" name="travel_date_from">&nbsp;&nbsp;&nbsp;&nbsp;
-    Return Date: <input type="date" name="to_date"><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;
-   Contact Details: <input type="text" name="contact_details" required>&nbsp;&nbsp;&nbsp;&nbsp;
-    Additional Information: <input type= "text" name="additional_info"></input><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;
-    Upload Photo: <input type="file" name="photo"><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;
+    </select>    <br>
+    Travel Date: <input type="date" name="travel_date_from">    <br>
+    Return Date: <input type="date" name="to_date">    <br>
+   Contact Details: <input type="text" name="contact_details" required>    <br>
+    Additional Information: <input type= "text" name="additional_info"></input>   <br>
+    Upload Photo: <input type="file" name="photo"><br><br>
     <input type="submit" value="Upload" >
 </h4>
 </form>	
 </center>
+     <!-- Script for Menu -->
+     <script>
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("nav");
+    
+        toggle.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+      </script>
 </body>
 </html>

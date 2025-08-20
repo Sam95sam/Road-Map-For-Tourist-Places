@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     /* Reset */
     * {
@@ -22,6 +24,95 @@
       min-height: 100vh;
     }
 
+    /* Navbar */
+    header {
+      background: #0056b3;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 20px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
+    /* Mobile Menu Icon */
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px){
+    .hero p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #eee;
+    }
+
+    .btn {
+      display: inline-block;
+      background: transparent;
+      border: 2px solid #ffeb3b;
+      color: #ffeb3b;
+      padding: 12px 28px;
+      font-size: 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffeb3b;
+      color: #000;
+    }
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #0056b3;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+    
     /* Navbar */
     header {
       background: #0056b3;
@@ -77,77 +168,124 @@
       }
     }
 
-    .hero p {
+    /* Content Section */
+    .content {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .content h2 {
+      font-size: 22px;
+      color: yellow;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.8;
+      text-align: justify;
+      color: #f1f1f1;
+    }
+
+    .quote {
+      text-align: center;
+      margin: 30px 0;
       font-size: 20px;
-      line-height: 1.6;
-      margin-bottom: 30px;
+      font-weight: 500;
+      color: #ffeb3b;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .contact h3 {
+      margin-bottom: 15px;
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .contact p {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #f1f1f1;
+    }
+
+    .contact a {
+      color: #ffeb3b;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact i {
+      margin-right: 8px;
+      color: #ffeb3b;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      background: rgba(0, 86, 179, 0.9);
+      font-size: 14px;
       color: #eee;
     }
-
-    .btn {
-      display: inline-block;
-      background: transparent;
-      border: 2px solid #ffeb3b;
-      color: #ffeb3b;
-      padding: 12px 28px;
-      font-size: 18px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #ffeb3b;
-      color: #000;
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
+     /* Responsive */
+     @media (max-width: 768px) {
       nav {
-        margin-top: 10px;
-        gap: 15px;
+        display: none;
+        flex-direction: column;
+        background: #0056b3;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
       }
 
-      .hero {
-        padding: 40px 20px;
+      nav.active {
+        display: flex;
       }
 
-      .hero h2 {
-        font-size: 24px;
-      }
-
-      .hero p {
-        font-size: 16px;
+      .menu-toggle {
+        display: block;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Header / Navbar -->
   <header>
-    <h1>Road Map For Tourist</h1>
+    <h1>Road Map For Tourist Places</h1>
+    <i class="fas fa-bars menu-toggle"></i>
     <nav>
-      <a href="homepage2.html">Home</a>
-      <a href="Places.html">Places</a>
-      <a href="ideas.html">Ideas</a>
-      <a href="travellers.html">Companion</a>
-      <a href="companion.html">Profile</a>
-      <a href="things.html">Things</a>
-      <a href="about.html">About</a>
+        <a href="homepage2.html">Home</a>
+        <a href="Places.html">Places</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="travellers.html">Companion</a>      
+        <a href="companion.html">Profile</a>
+        <a href="things.html">Things</a>
+        <a href="about.html">About</a>
     </nav>
   </header>
-
-  <section class="hero">
+<center>
+  <section class="hero"><br><br>
     <h2>Let's Start Your Travel</h2>
     <p>You know that travel is the best way to explore the world and create unforgettable memories in your life.</p>
     <a href="Places.html" class="btn">Explore Now</a>
   </section>
-
+</center>
     <!-- Script for Menu -->
     <script>
         const toggle = document.querySelector(".menu-toggle");

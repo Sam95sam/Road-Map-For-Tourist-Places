@@ -8,8 +8,9 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome for Icons -->
+  <!-- Font Awesome for Icons --> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
   <style>
     body {
@@ -149,23 +150,45 @@
       font-size: 14px;
       color: #eee;
     }
+     /* Responsive */
+     @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #0056b3;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
+ <!-- Header / Navbar -->
+ <header>
     <h1>Road Map For Tourist Places</h1>
-    <nav id="menu">
-        
-    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-    <a href="homepage2.html">Home</a>
-    <a href="Places.html">Places</a>
-    <a href="ideas.html">Ideas</a>
-    <a href="travellers.html">Companion</a>
-    <a href="companion.html">Profile</a>
-    <a href="things.html">Things</a>
-    <a href="about.html">About</a>
+    <i class="fas fa-bars menu-toggle"></i>
+    <nav>
+        <a href="homepage2.html">Home</a>
+        <a href="Places.html">Places</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="travellers.html">Companion</a>      
+        <a href="companion.html">Profile</a>
+        <a href="things.html">Things</a>
+        <a href="about.html">About</a>
     </nav>
   </header>
 
